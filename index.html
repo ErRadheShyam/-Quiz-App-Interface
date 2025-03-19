@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz App</title>
+  <style>
+    /* Base reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: #121212;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    
+    .quiz-app {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .quiz-header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    
+    /* Progress Indicator */
+    .progress-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .progress-step {
+      width: 30px;
+      height: 30px;
+      background-color: #444;
+      border-radius: 50%;
+      margin: 0 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9em;
+      color: #ccc;
+      transition: background-color 0.3s ease;
+    }
+    
+    .progress-step.active {
+      background-color: #6200EE;
+      color: #fff;
+    }
+    
+    .quiz-container {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    
+    .question-section {
+      margin-bottom: 20px;
+    }
+    
+    .question-number {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #bbbbbb;
+    }
+    
+    .question-text {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+    
+    .options {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    
+    .options li {
+      background-color: #2a2a2a;
+      padding: 12px 15px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .options li:hover {
+      background-color: #3d3d3d;
+    }
+    
+    .quiz-actions {
+      text-align: right;
+    }
+    
+    .btn {
+      background-color: #6200EE;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: #7b1fff;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 600px) {
+      .quiz-app {
+        padding: 10px;
+      }
+      
+      .question-text {
+        font-size: 1.5em;
+      }
+      
+      .quiz-actions {
+        text-align: center;
+      }
+      
+      .btn {
+        width: 100%;
+        padding: 10px;
+      }
+      
+      .progress-step {
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-app">
+    <header class="quiz-header">
+      <h1>Quiz Time</h1>
+    </header>
+    
+    <!-- Progress Indicator: Simulate 10 Questions -->
+    <div class="progress-container">
+      <div class="progress-step active">1</div>
+      <div class="progress-step">2</div>
+      <div class="progress-step">3</div>
+      <div class="progress-step">4</div>
+      <div class="progress-step">5</div>
+      <div class="progress-step">6</div>
+      <div class="progress-step">7</div>
+      <div class="progress-step">8</div>
+      <div class="progress-step">9</div>
+      <div class="progress-step">10</div>
+    </div>
+    
+    <!-- Quiz Question Container -->
+    <div class="quiz-container">
+      <div class="question-section">
+        <h2 class="question-number">Question 1 of 10</h2>
+        <p class="question-text">What is 2 + 2?</p>
+      </div>
+      
+      <ul class="options">
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
+      
+      <div class="quiz-actions">
+        <button class="btn">Next</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
